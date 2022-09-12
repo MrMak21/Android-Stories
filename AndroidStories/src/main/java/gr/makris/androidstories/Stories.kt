@@ -152,6 +152,7 @@ constructor(
 
     private fun showStory() {
         val progressBar = findViewWithTag<ProgressBar>("story${storyIndex}")
+        loadingView.visibility = View.VISIBLE
         loadStory(storiesList[storyIndex - 1])
 
         animation = ObjectAnimator.ofInt(progressBar, "progress", 0, 100)
@@ -170,6 +171,7 @@ constructor(
                     }
                 } else {
                     // on stories end
+                    loadingView.visibility = View.GONE
                     if (::storiesListener.isInitialized)
                         storiesListener.onStoriesEnd()
                 }
@@ -200,8 +202,17 @@ constructor(
             it.progress = 0
         }
     }
-    var startClickTime = 0L
 
+    private fun completeProgressBar(storyIndex: Int) {
+        val lastProgressBar = findViewWithTag<ProgressBar>("story${storyIndex}")
+        lastProgressBar?.let {
+            it.progress = 100
+        }
+    }
+
+
+
+    var startClickTime = 0L
     override fun onTouch(view: View?, event: MotionEvent?): Boolean {
         val MAX_CLICK_DURATION = 200
         when (event?.action) {
@@ -230,6 +241,10 @@ constructor(
     }
 
     private fun rightPanelTouch() {
+        if (storyIndex == storiesList.size) {
+            completeProgressBar(storyIndex)
+            return
+        }
         userClicked = true
         animation.end()
         if (storyIndex < storiesList.size)
@@ -276,6 +291,7 @@ constructor(
                         dataSource: DataSource?,
                         isFirstResource: Boolean
                     ): Boolean {
+                        loadingView.visibility = View.GONE
                         animation.start()
                         return false
                     }

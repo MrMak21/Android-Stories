@@ -23,13 +23,10 @@ class MainActivity : AppCompatActivity(), StoriesCallback {
 //        )
 
         val storiesList = listOf<StoryItem>(
-            StoryItem(src = R.drawable.cool),
             StoryItem(src = R.drawable.mak),
-//            StoryItem(src = R.drawable.cool3),
-//            StoryItem(src = R.drawable.cool4),
-//            StoryItem(src = R.drawable.cool1),
-            StoryItem(src = R.drawable.cool5),
-            StoryItem(src = R.drawable.cool)
+            StoryItem(src = R.drawable.mak),
+            StoryItem(src = R.drawable.mak),
+            StoryItem(src = R.drawable.mak)
         )
 
         val storiesView = findViewById<Stories>(R.id.stories)

@@ -14,6 +14,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:indeterminate="true"
+        tools:visibility="visible"
+        android:visibility="gone"
         />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -62,20 +64,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintWidth_percent="0.5"
         android:clickable="true"/>
-
-
-<!--    <TextView-->
-<!--        android:id="@+id/testView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        android:textSize="25sp"-->
-<!--        tools:text="5"/>-->
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
