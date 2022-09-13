@@ -1,4 +1,9 @@
+<html>
+	<head>
 <meta name="google-site-verification" content="akgsvoFpte95k2IGDBY-mJN9SEoW-APHAjNSc6VQlDg" />
+
+</head>
+</html>
 
 # Android-Stories
 
