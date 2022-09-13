@@ -37,23 +37,31 @@ dependencies {
 ```
 
 ### Usage
-<p> 
-  Add view to Activity/Fragment layout
-</p>
+
+ - Add view to Activity/Fragment layout
+
 
 ```
 <gr.makris.androidstories.Stories
         android:id="@+id/stories"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:progressBarBackgroundColor="@color/gray"
-        app:progressBarColor="@color/white"
-        app:storyDuration="3" // in Seconds
+        app:progressBarBackgroundColor="@color/gray" // --> progressBar bacground color
+        app:progressBarColor="@color/white" // --> progressBar color
+        app:storyDuration="3" // --> in seconds
         app:loadingViewProgressColor="@color/purple_700" />
 ```
 
+- You can also change the progress bar color & the background with these attributes
 
- Then create a **StoryItem()** lists and pass it to **Stories** view. <br>
+```
+ app:progressBarBackgroundColor="@color/gray"
+        app:progressBarColor="@color/white"
+```
+
+
+
+ - Then create a **StoryItem()** lists and pass it to **Stories** view. <br>
  Kotlin example:
  
  ```
@@ -68,9 +76,36 @@ dependencies {
         storiesView.setStoriesList(storiesList)
  ```
  
+ - The ***StoryItem*** object can take 2 types of parameters: 
+  1) String (Useful for url's containing images)
+  2) Int (You can load a Drawable file)
  
- Done! You can now see the stories and interact with them just like in Instagram. <br> <br>
- Press to the right to go next, press to the left to go back or hold to stop the progress.
+<br>
+
+ - Also Android-Stories view containing all the instagram-like functionality.
+ Press to the ***right*** to go next story, press to the ***left*** to go to the previous story or ***hold*** to pause time.
+ 
+ <br>
+ 
+ - Android-Stories view also contains a callback so you know when the stories come to an end. <br>
+ All you have to do is implement ***StoriesCallback*** in your Activity/Fragment and override ***onStoriesEnd()*** method. <br>
+ Kotlin example: 
+ 
+ ```
+ class MainActivity : AppCompatActivity(), StoriesCallback
+ 	...
+	...
+	override fun onStoriesEnd() {
+        	//do something
+    }
+ ```
+ 
+ ### Upcoming things
+ - [ ] Set ***marginStart*** & ***marginEnd*** of story-progress view from xml
+ - [ ] Set ***margin*** between every story-progress line on top of the view
+ - [ ] Support videos
+ 
+ 
 
 
 
