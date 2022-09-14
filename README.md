@@ -32,7 +32,7 @@ Step 2. Add the dependency
 
 ```
 dependencies {
-	        implementation 'com.github.MrMak21:Android-Stories:1.1.3'
+	        implementation 'com.github.MrMak21:Android-Stories:1.1.4'
 	}
 ```
 
