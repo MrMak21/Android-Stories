@@ -162,18 +162,23 @@ constructor(
             override fun onAnimationStart(animator: Animator) {
             }
             override fun onAnimationEnd(animator: Animator) {
-                if (storyIndex < storiesList.size) {
+                if (storyIndex - 1 <= storiesList.size) {
                     if (userClicked) {
                         userClicked = false
                     } else {
-                        storyIndex += 1
-                        showStory()
+                        if (storyIndex < storiesList.size) {
+                            storyIndex += 1
+                            showStory()
+                        } else {
+                            // on stories end
+                            loadingView.visibility = View.GONE
+                            onStoriesCompleted()
+                        }
                     }
                 } else {
                     // on stories end
                     loadingView.visibility = View.GONE
-                    if (::storiesListener.isInitialized)
-                        storiesListener.onStoriesEnd()
+                    onStoriesCompleted()
                 }
             }
 
@@ -243,6 +248,7 @@ constructor(
     private fun rightPanelTouch() {
         if (storyIndex == storiesList.size) {
             completeProgressBar(storyIndex)
+            onStoriesCompleted()
             return
         }
         userClicked = true
@@ -259,6 +265,11 @@ constructor(
         if (storyIndex > 1)
             storyIndex -= 1
         showStory()
+    }
+
+    private fun onStoriesCompleted() {
+        if (::storiesListener.isInitialized)
+            storiesListener.onStoriesEnd()
     }
 
     private fun loadStory(story: StoryItem) {

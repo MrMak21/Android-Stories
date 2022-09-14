@@ -23,10 +23,10 @@ class MainActivity : AppCompatActivity(), StoriesCallback {
 //        )
 
         val storiesList = listOf<StoryItem>(
-            StoryItem(src = R.drawable.mak),
-            StoryItem(src = R.drawable.mak),
-            StoryItem(src = R.drawable.mak),
-            StoryItem(src = R.drawable.mak)
+            StoryItem(url = "https://fakeimg.pl/100x400/"),
+            StoryItem(url = "https://fakeimg.pl/200x400/"),
+            StoryItem(url = "https://fakeimg.pl/300x400/"),
+            StoryItem(url = "https://fakeimg.pl/400x400/")
         )
 
         val storiesView = findViewById<Stories>(R.id.stories)
@@ -35,13 +35,5 @@ class MainActivity : AppCompatActivity(), StoriesCallback {
 
     override fun onStoriesEnd() {
         println("Stories end callback")
-    }
-
-    fun load(str: String) {
-
-    }
-
-    fun load(img: Int) {
-
     }
 }
