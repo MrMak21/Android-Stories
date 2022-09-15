@@ -83,7 +83,7 @@ constructor(
         rightTouchPanel = findViewById(R.id.rightTouchPanel)
         imageContentView = findViewById(R.id.contentImageView)
         videoContentView = findViewById(R.id.contentVideoView)
-        loadingView = findViewById(R.id.loadingView)
+        loadingView = findViewById(R.id.androidStoriesLoadingView)
 
         leftTouchPanel.setOnTouchListener(this)
         rightTouchPanel.setOnTouchListener(this)

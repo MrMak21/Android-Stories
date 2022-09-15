@@ -5,18 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ProgressBar
-        android:id="@+id/loadingView"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:indeterminate="true"
-        tools:visibility="visible"
-        android:visibility="gone"
-        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contentContainer"
@@ -64,5 +52,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintWidth_percent="0.5"
         android:clickable="true"/>
+
+    <ProgressBar
+        android:id="@+id/androidStoriesLoadingView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:indeterminate="true"
+        tools:visibility="visible"
+        android:visibility="gone"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
