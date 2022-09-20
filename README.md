@@ -5,9 +5,9 @@
 </head>
 </html>
 
-# Android-Stories
+# Android Stories Library
 
-### Instagram like stories for Android. 
+### Instagram like stories library for Android. 
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/28200363/189760191-004367db-ce64-4f9c-81f1-29f1710d9e32.png" width="250" height="400" alt="Alt text" title="Optional title">
@@ -82,12 +82,12 @@ dependencies {
  
 <br>
 
- - Also Android-Stories view containing all the instagram-like functionality.
+ - Also Android Stories library view containing all the instagram-like functionality.
  Press to the ***right*** to go next story, press to the ***left*** to go to the previous story or ***hold*** to pause time.
  
  <br>
  
- - Android-Stories view also contains a callback so you know when the stories come to an end. <br>
+ - Android Stories library view also contains a callback so you know when the stories come to an end. <br>
  All you have to do is implement ***StoriesCallback*** in your Activity/Fragment and override ***onStoriesEnd()*** method. <br>
  Kotlin example: 
  
